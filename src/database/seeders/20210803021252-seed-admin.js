@@ -1,6 +1,6 @@
 'use strict';
 
-const { generateHash } = require("../../utils/hashAuth");
+const { generateHash } = require("../../utils/auth");
 require('dotenv').config();
 
 module.exports = {
