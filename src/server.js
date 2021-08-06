@@ -1,3 +1,5 @@
+const path = require('path');
+
 const express = require('express');
 const routes = require('./routes');
 
@@ -6,6 +8,7 @@ require('./database');
 
 const app = express();
 
+app.use('/images', express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(express.json());
 app.use(routes);
 
