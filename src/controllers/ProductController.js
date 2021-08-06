@@ -22,12 +22,12 @@ module.exports = {
     const { id_category, name, description, price } = req.body;
 
     try {
-      // const productExists = await Product.findAll({
-      //   where: { name }
-      // });
+      const productExists = await Product.findAll({
+        where: { name }
+      });
 
-      // if (productExists.length > 0)
-      //   return res.status(400).send({ msg: "Duplicate entries in the database" });
+      if (productExists.length > 0)
+        return res.status(400).send({ msg: "Duplicate entries in the database" });
 
       const category = await Category.findByPk(id_category);
 

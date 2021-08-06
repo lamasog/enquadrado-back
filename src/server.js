@@ -1,4 +1,5 @@
 const path = require('path');
+const cors = require('cors');
 
 const express = require('express');
 const routes = require('./routes');
@@ -8,6 +9,7 @@ require('./database');
 
 const app = express();
 
+app.use(cors());
 app.use('/images', express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(express.json());
 app.use(routes);
