@@ -103,7 +103,7 @@ module.exports = {
   },
 
   async delete(req, res) {
-    if(req.isAdmin)
+    if(!req.isAdmin)
       return res.status(403).send({ msg: "Permission denied" });
 
     try {
